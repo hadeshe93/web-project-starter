@@ -1,0 +1,12 @@
+{
+  "name": "@hadeshe93/webpack5-starter",
+  "version": "0.1.0",
+  "description": "webpack5 starter for projects",
+  "main": "index.js",
+  "author": "hadeshe",
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "private": true
+}

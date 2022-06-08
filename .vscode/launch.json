@@ -7,8 +7,8 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Webpack Debug",
-      "cwd": "${workspaceFolder}/packages/webpack5-starter-vue3",
+      "name": "Webpack Debug Customed Loader",
+      "cwd": "${workspaceFolder}/packages/webpack5-starter-loader",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "debug"]
     }

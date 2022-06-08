@@ -47,7 +47,7 @@ const config = {
           {
             loader: 'url-loader',
             options: {
-              limit: 1024 * 100,
+              limit: 1024,
               name: 'assets/images/[name].[hash].[ext]',
               esModule: false
             }

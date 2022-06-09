@@ -27,7 +27,17 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.txt$/, loader: resolve('configs/loaders/customed-loader.js') },
+      // { test: /\.txt$/, loader: resolve('configs/loaders/customed-loader.js') },
+      // { test: /\.txt$/, use: ['customed-loader'] },
+      {
+        test: /\.txt$/,
+        use: [{
+          loader: resolve('configs/loaders/customed-loader.js'),
+          options: {
+            key: 'value'
+          },
+        }],
+      },
       { test: /\.vue$/, loader: 'vue-loader' },
       {
         test: /\.js$/,
@@ -58,13 +68,14 @@ const config = {
       },
     ],
   },
-  // resolveLoader: {
-  //   modules: [
-  //     pathResolve(__dirname, '../node_modules'),
-  //     // 为了让 webpack 能够识别 loaders 目录下的自定义 loader
-  //     pathResolve(__dirname, 'loaders'),
-  //   ]
-  // },
+  resolveLoader: {
+    modules: [
+      // resolve('../node_modules'),
+      'node_modules',
+      // 为了让 webpack 能够识别 loaders 目录下的自定义 loader
+      resolve('./configs/loaders'),
+    ]
+  },
   devServer: {
     hot: true,
     port: 8200,

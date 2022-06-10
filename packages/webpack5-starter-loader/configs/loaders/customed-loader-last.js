@@ -3,8 +3,9 @@ const { getOptions } = require('loader-utils');
 
 const cutomedLoader = function(content, sourceMap, meta) {
   const options = getOptions(this);
-  console.log(options);
-  return `module.exports="${content}";`;
+  // console.log(options);
+  console.log(content);
+  return content;
 };
 
 // pitching loader

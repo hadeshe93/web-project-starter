@@ -32,6 +32,7 @@
   "dependencies": {
     "@babel/runtime-corejs3": "^7.17.9",
     "core-js": "^3.22.0",
-    "loader-utils": "^2.0.2"
+    "loader-utils": "^2.0.2",
+    "markdown-it": "^13.0.1"
   }
 }

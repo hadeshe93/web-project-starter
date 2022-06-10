@@ -32,10 +32,21 @@ const config = {
       {
         test: /\.txt$/,
         use: [{
+          loader: resolve('configs/loaders/customed-loader-last.js'),
+          options: {
+            key: 'value-last'
+          },
+        }, {
           loader: resolve('configs/loaders/customed-loader.js'),
           options: {
             key: 'value'
           },
+        }],
+      },
+      {
+        test: /\.md$/,
+        use: [{
+          loader: resolve('configs/loaders/md-highlight-loader.js'),
         }],
       },
       { test: /\.vue$/, loader: 'vue-loader' },

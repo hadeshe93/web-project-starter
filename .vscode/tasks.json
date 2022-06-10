@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "packages/webpack5-starter-loader",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "[webpack5-starter-loade] dev",
+			"detail": "node --inspect ./node_modules/.bin/webpack-cli -- --config=./configs/webpack.config.js"
+		}
+	]
+}

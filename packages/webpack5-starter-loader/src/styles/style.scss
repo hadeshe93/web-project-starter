@@ -1,4 +1,17 @@
 body {
-  color: #ffaaaa;
   background-color: antiquewhite;
+}
+
+.highlight-zone {
+  border-radius: 5px;
+  padding: 14px;
+}
+.highlight-zone.success {
+  background-color: darkseagreen;
+}
+.highlight-zone.warning {
+  background-color: bisque;
+}
+.highlight-zone.error {
+  background-color: darksalmon;
 }

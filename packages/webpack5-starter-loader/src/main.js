@@ -10,12 +10,8 @@
 import { createApp } from 'vue';
 import App from './app.vue';
 import { get as getCookie } from '../utils/cookie';
-import text from './text.txt';
-import readme from './readme.md';
 import './styles/style.scss';
 
 createApp(App).mount('#app');
 
-console.log('text:', text);
-console.log('readme:', readme);
 console.log(getCookie('person_id_wsbeacon'));

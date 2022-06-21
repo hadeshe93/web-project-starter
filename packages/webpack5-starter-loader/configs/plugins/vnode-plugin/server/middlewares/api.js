@@ -1,4 +1,5 @@
-const { debug } = require('../utils/debug');
+const { debug } = require('../../utils/debug');
+const launchEditorCore = require('../lib/launchEditor');
 
 async function launchEditor(req, res, next) {
   const { file, line, column } = req.query;
@@ -9,6 +10,7 @@ async function launchEditor(req, res, next) {
     });
     return;
   }
+  launchEditorCore(decodeURIComponent(file), Number(line), Number(column));
   res.json({
     code: 0,
   });

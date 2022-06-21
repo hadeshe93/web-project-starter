@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-06-21 11:07:59
+ * @LastEditTime  : 2022-06-21 12:55:26
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-loader/configs/webpack.config.js
  */
 
@@ -102,11 +102,11 @@ const config = {
   plugins: [
     new VueLoaderPlugin(),
     ...( isDevMode ? [] : [new MiniCssExtractPlugin()] ),
-    new VNodePlugin({}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: resolve('public/index.html'),
     }),
+    new VNodePlugin({}),
   ],
 }
 

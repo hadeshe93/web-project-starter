@@ -3,9 +3,9 @@
  * @usage         : 
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
- * @LastEditors   : hadeshe93<hadeshe93@gmail.com>
- * @LastEditTime  : 2022-04-26 08:39:25
- * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3/configs/webpack.config.js
+ * @LastEditors   : hadeshe
+ * @LastEditTime  : 2022-06-20 19:23:29
+ * @FilePath      : /webpack5-starter/packages/webpack5-starter-loader/configs/webpack.config.js
  */
 
 const { resolve: pathResolve } = require('path');
@@ -49,7 +49,14 @@ const config = {
           loader: resolve('configs/loaders/md-highlight-loader.js'),
         }],
       },
-      { test: /\.vue$/, loader: 'vue-loader' },
+      {
+        test: /\.vue$/,
+        use: [{
+          loader: 'vue-loader'
+        }, {
+          loader: resolve('configs/loaders/injector-loader.js'),
+        }],
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,

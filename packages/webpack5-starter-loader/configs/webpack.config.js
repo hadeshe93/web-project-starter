@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-06-20 19:23:29
+ * @LastEditTime  : 2022-06-21 11:07:59
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-loader/configs/webpack.config.js
  */
 
@@ -12,6 +12,7 @@ const { resolve: pathResolve } = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VNodePlugin = require('./plugins/vnode-plugin/index');
 
 const MODE_DEVELOPMENT = 'development';
 
@@ -101,6 +102,7 @@ const config = {
   plugins: [
     new VueLoaderPlugin(),
     ...( isDevMode ? [] : [new MiniCssExtractPlugin()] ),
+    new VNodePlugin({}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: resolve('public/index.html'),

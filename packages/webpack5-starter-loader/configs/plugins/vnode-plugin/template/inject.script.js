@@ -19,5 +19,5 @@ window.addEventListener('click', async (e) => {
   e.stopPropagation();
   e.preventDefault();
   const res = await traceSourceCode(targetNode);
-  console.log(res);
+  console.log('[traceSourceCode] res:', res);
 });

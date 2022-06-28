@@ -38,6 +38,11 @@ class VNodePlugin {
 
   apply(compiler) {
     debug('加载插件');
+    compiler.hooks.afterCompile.tapAsync(PLUGIN_NAME, (compilation, callback) => {
+      // 监听注入的脚本文件，可以达到重新编译的效果
+      compilation.fileDependencies.add(INJECT_SCRIPT_PATH);
+      callback();
+    });
     compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation) => {
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(PLUGIN_NAME, async (data, cb) => {
         // Manipulate the content

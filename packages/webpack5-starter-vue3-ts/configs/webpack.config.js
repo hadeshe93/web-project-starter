@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-06-27 14:24:23
+ * @LastEditTime  : 2022-07-07 12:56:03
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.config.js
  */
 
@@ -17,13 +17,14 @@ const MODE_DEVELOPMENT = 'development';
 
 const resolve = (pathname) => pathResolve(__dirname, '../', pathname);
 const mode = process.env.MODE || MODE_DEVELOPMENT;
+const targetPage = process.env.TARGET_PAGE;
 const isDevMode = mode === MODE_DEVELOPMENT;
 const styleLoader = isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader;
 
 const config = {
   mode,
   entry: {
-    app: resolve('src/main.ts'),
+    app: resolve(`src/pages/${targetPage}/main.ts`),
   },
   module: {
     rules: [
@@ -60,6 +61,11 @@ const config = {
   devServer: {
     hot: true,
     port: 8200,
+  },
+  resolve: {
+    alias: {
+      '@': resolve(`src/`),
+    },
   },
   plugins: [
     new VueLoaderPlugin(),

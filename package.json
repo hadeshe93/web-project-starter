@@ -9,7 +9,5 @@
   ],
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "rimraf": "^3.0.2"
-  }
+  "dependencies": {}
 }

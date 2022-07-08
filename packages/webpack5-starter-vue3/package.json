@@ -31,6 +31,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.17.9",
-    "core-js": "^3.22.0"
+    "add-asset-html-webpack-plugin": "^5.0.2",
+    "core-js": "^3.22.0",
+    "rimraf": "^3.0.2"
   }
 }

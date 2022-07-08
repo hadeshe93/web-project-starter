@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-07-08 12:33:52
+ * @LastEditTime  : 2022-07-08 12:49:23
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.config.js
  */
 
@@ -21,6 +21,11 @@ const MODE_DEVELOPMENT = 'development';
 const resolve = (pathname) => pathResolve(__dirname, '../', pathname);
 const mode = process.env.MODE || MODE_DEVELOPMENT;
 const targetPage = process.env.TARGET_PAGE;
+if (!targetPage) {
+  console.error('请指定环境变量 TARGET_PAGE 为需要构建的页面名称');
+  process.exit(0);
+}
+
 const isDevMode = mode === MODE_DEVELOPMENT;
 const styleLoader = isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader;
 

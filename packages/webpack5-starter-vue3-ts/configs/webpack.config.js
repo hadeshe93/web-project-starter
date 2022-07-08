@@ -4,14 +4,17 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-07-07 12:56:03
+ * @LastEditTime  : 2022-07-08 12:33:52
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.config.js
  */
 
 const { resolve: pathResolve } = require('path');
+const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const { getDllFilePathMap, dllOutputPath } = require('./webpack.dll.config.js');
 
 const MODE_DEVELOPMENT = 'development';
 
@@ -25,6 +28,9 @@ const config = {
   mode,
   entry: {
     app: resolve(`src/pages/${targetPage}/main.ts`),
+  },
+  output: {
+    path: resolve(`dist/${targetPage}/`),
   },
   module: {
     rules: [
@@ -74,6 +80,15 @@ const config = {
       filename: 'index.html',
       template: resolve('public/index.html'),
     }),
+    ...( isDevMode ? [] : [
+      ...[...getDllFilePathMap().keys()].map(key => new webpack.DllReferencePlugin({
+        manifest: pathResolve(dllOutputPath, `${key}.mainifest.json`),
+      })),
+      new AddAssetHtmlPlugin([...getDllFilePathMap().values()].map(filepath => ({
+        publicPath: './',
+        filepath,
+      }))),
+    ]),
   ],
 }
 

@@ -4,7 +4,9 @@
   "scripts": {
     "debug": "node --inspect-brk ./node_modules/.bin/webpack-cli -- --config=./configs/webpack.config.js",
     "dev": "cross-env MODE=development TARGET_PAGE=demo1 webpack serve --config=./configs/webpack.config.js",
-    "build": "cross-env MODE=production webpack --config=./configs/webpack.config.js"
+    "build": "rimraf dist/ && npm run build:dll && npm run build:page",
+    "build:page": "cross-env MODE=production webpack --config=./configs/webpack.config.js",
+    "build:dll": "cross-env MODE=production webpack --config=./configs/webpack.dll.config.js"
   },
   "main": "index.js",
   "author": "hadeshe",
@@ -32,6 +34,8 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime-corejs3": "^7.17.9",
-    "core-js": "^3.22.0"
+    "add-asset-html-webpack-plugin": "^5.0.2",
+    "core-js": "^3.22.0",
+    "vue-router": "^4.1.1"
   }
 }

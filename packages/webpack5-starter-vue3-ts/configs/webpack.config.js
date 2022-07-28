@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-07-08 12:49:23
+ * @LastEditTime  : 2022-07-27 23:28:16
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.config.js
  */
 
@@ -29,13 +29,15 @@ if (!targetPage) {
 const isDevMode = mode === MODE_DEVELOPMENT;
 const styleLoader = isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader;
 
+const outputPath = resolve(`dist/${targetPage}/`);
 const config = {
   mode,
   entry: {
     app: resolve(`src/pages/${targetPage}/main.ts`),
   },
   output: {
-    path: resolve(`dist/${targetPage}/`),
+    filename: '[name].[hash:8].js',
+    path: outputPath,
   },
   module: {
     rules: [
@@ -87,10 +89,12 @@ const config = {
     }),
     ...( isDevMode ? [] : [
       ...[...getDllFilePathMap().keys()].map(key => new webpack.DllReferencePlugin({
+        context: __dirname,
         manifest: pathResolve(dllOutputPath, `${key}.mainifest.json`),
       })),
       new AddAssetHtmlPlugin([...getDllFilePathMap().values()].map(filepath => ({
-        publicPath: './',
+        publicPath: '../common/',
+        outputPath: '../common/',
         filepath,
       }))),
     ]),

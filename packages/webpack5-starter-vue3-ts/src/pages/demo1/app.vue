@@ -3,7 +3,7 @@
     count 值: {{ cnt }} 
     <button @click="addCnt">Click</button>
 
-    <Pannel title="大漠孤烟直" content="君不见黄河之水天上来君不见黄河之水天上来君不见黄河之水天上来君不见黄河之水天上来" />
+    <Pannel title="大漠孤烟直~" content="君不见黄河之水天上来君不见黄河之水天上来君不见黄河之水天上来君不见黄河之水天上来" />
   </div>
 </template>
 

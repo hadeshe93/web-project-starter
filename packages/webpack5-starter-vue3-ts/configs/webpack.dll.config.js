@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-07-08 12:32:50
+ * @LastEditTime  : 2022-07-27 23:35:41
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.dll.config.js
  */
 
@@ -18,7 +18,7 @@ const mode = process.env.MODE || MODE_DEVELOPMENT;
 
 // 构建入口 map
 const ENTRY_MAP = {
-  'vue-stack': ['vue', 'vue-router'],
+  'vendor': ['vue', 'vue-router'],
 };
 
 // 构建产物目录
@@ -30,11 +30,14 @@ const config = {
     ...ENTRY_MAP,
   },
   output: {
+    // clean: true,
     path: OUTPUT_PATH,
     filename: '[name]_[hash:8].js',
+    library: '[name]_[hash:8]',
   },
   plugins: [
     new webpack.DllPlugin({
+      context: __dirname,
       name: '[name]_[hash:8]',
       path: pathResolve(OUTPUT_PATH, '[name].mainifest.json'),
     }),

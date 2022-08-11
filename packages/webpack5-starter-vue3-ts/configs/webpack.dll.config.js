@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-07-27 23:35:41
+ * @LastEditTime  : 2022-08-11 10:24:41
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.dll.config.js
  */
 
@@ -30,14 +30,12 @@ const config = {
     ...ENTRY_MAP,
   },
   output: {
-    // clean: true,
     path: OUTPUT_PATH,
     filename: '[name]_[hash:8].js',
     library: '[name]_[hash:8]',
   },
   plugins: [
     new webpack.DllPlugin({
-      context: __dirname,
       name: '[name]_[hash:8]',
       path: pathResolve(OUTPUT_PATH, '[name].mainifest.json'),
     }),

@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
   padding: 10px 20px;
   border-radius: 5px;
   background-color: cadetblue;
+  font-size: 14px;
   .pannel-title {
     height: 32px;
     line-height: 32px;

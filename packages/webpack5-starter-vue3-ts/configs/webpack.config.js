@@ -4,7 +4,7 @@
  * @Date          : 2022-04-19 09:30:01
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe
- * @LastEditTime  : 2022-07-27 23:28:16
+ * @LastEditTime  : 2022-08-11 10:24:50
  * @FilePath      : /webpack5-starter/packages/webpack5-starter-vue3-ts/configs/webpack.config.js
  */
 
@@ -89,7 +89,6 @@ const config = {
     }),
     ...( isDevMode ? [] : [
       ...[...getDllFilePathMap().keys()].map(key => new webpack.DllReferencePlugin({
-        context: __dirname,
         manifest: pathResolve(dllOutputPath, `${key}.mainifest.json`),
       })),
       new AddAssetHtmlPlugin([...getDllFilePathMap().values()].map(filepath => ({

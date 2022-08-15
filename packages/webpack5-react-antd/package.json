@@ -1,5 +1,5 @@
 {
-  "name": "@hadeshe93/webpack5-react-cms",
+  "name": "@hadeshe93/webpack5-react-antd",
   "version": "0.1.0",
   "scripts": {
     "start": "vice dev",

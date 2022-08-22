@@ -1,5 +1,5 @@
 <template>
-  <div class="a">
+  <div>
     <div v-if="show" v-for="item in list" :key="item">{{ item }}</div>
   </div>
 </template>

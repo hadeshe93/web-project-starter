@@ -59,5 +59,10 @@
     "react-dom": "~17.0.1",
     "react-router-dom": "~5.3.0",
     "rimraf": "^3.0.2"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "> 0.2%",
+    "iOS >= 10.3"
+  ]
 }

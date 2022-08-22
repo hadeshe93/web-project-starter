@@ -45,11 +45,15 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime-corejs3": "^7.17.9",
+    "@types/lodash": "^4.14.183",
     "add-asset-html-webpack-plugin": "^5.0.2",
     "core-js": "^3.22.0",
     "element-plus": "^2.2.12",
+    "lodash": "^4.17.21",
     "pinia": "^2.0.16",
     "rimraf": "^3.0.2",
-    "vue-router": "^4.1.1"
+    "vue-router": "^4.1.1",
+    "wujie": "1.0.0-rc.10",
+    "wujie-vue3": "1.0.0-rc.10"
   }
 }

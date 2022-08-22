@@ -315,6 +315,7 @@ importers:
       '@babel/preset-env': ^7.16.11
       '@babel/preset-typescript': ^7.17.12
       '@babel/runtime-corejs3': ^7.17.9
+      '@types/lodash': ^4.14.183
       add-asset-html-webpack-plugin: ^5.0.2
       babel-loader: ^8.2.4
       clean-webpack-plugin: ^4.0.0
@@ -325,6 +326,7 @@ importers:
       file-loader: ^6.2.0
       html-webpack-plugin: ^5.5.0
       http-proxy: ^1.18.1
+      lodash: ^4.17.21
       mini-css-extract-plugin: ^2.6.0
       pinia: ^2.0.16
       postcss: ^8.4.16
@@ -344,15 +346,21 @@ importers:
       webpack: ^5.72.0
       webpack-cli: ^4.9.2
       webpack-dev-server: ^4.8.1
+      wujie: 1.0.0-rc.10
+      wujie-vue3: 1.0.0-rc.10
     dependencies:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.18.10
       '@babel/runtime-corejs3': 7.18.9
+      '@types/lodash': 4.14.183
       add-asset-html-webpack-plugin: 5.0.2_dseqt6curza6cwqlyc3eowsnru
       core-js: 3.24.1
       element-plus: 2.2.12_vue@3.2.37
+      lodash: 4.17.21
       pinia: 2.0.17_vue@3.2.37
       rimraf: 3.0.2
       vue-router: 4.1.3_vue@3.2.37
+      wujie: 1.0.0-rc.10
+      wujie-vue3: 1.0.0-rc.10_vue@3.2.37
     devDependencies:
       '@babel/core': 7.18.10
       '@babel/plugin-transform-runtime': 7.18.10_@babel+core@7.18.10
@@ -2074,11 +2082,11 @@ packages:
   /@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
-      '@types/lodash': 4.14.182
+      '@types/lodash': 4.14.183
     dev: false
 
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
+  /@types/lodash/4.14.183:
+    resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
     dev: false
 
   /@types/mime/3.0.1:
@@ -3257,7 +3265,7 @@ packages:
       '@element-plus/icons-vue': 2.0.6_vue@3.2.37
       '@floating-ui/dom': 0.5.4
       '@popperjs/core': /@sxzz/popperjs-es/2.11.7
-      '@types/lodash': 4.14.182
+      '@types/lodash': 4.14.183
       '@types/lodash-es': 4.17.6
       '@vueuse/core': 8.9.4_vue@3.2.37
       async-validator: 4.2.5
@@ -6690,6 +6698,21 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+
+  /wujie-vue3/1.0.0-rc.10_vue@3.2.37:
+    resolution: {integrity: sha512-wAJ4Id+w0av0mGJhFGBdXUV1ol98lrfvfeQGvl0ceSH2nQTUa+qATjSWBJgqOUhYAEfGumeAUw3xch4zpFN/HA==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.2.37
+      wujie: 1.0.0-rc.10
+    dev: false
+
+  /wujie/1.0.0-rc.10:
+    resolution: {integrity: sha512-5Tmt6TtR28DzIct+xtF0vpU2FFIUxix2bmnhiey4tkmi9xQV9bFqWxtvoucJLHys2gJEDcFsdA55HZLVaZW0aw==}
+    dependencies:
+      '@babel/runtime': 7.18.9
+    dev: false
 
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}

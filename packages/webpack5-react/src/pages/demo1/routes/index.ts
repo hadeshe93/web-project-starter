@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { RouteInfo } from '../types/route';
+import { RouteInfo } from '../../../types/route';
 
 
 const ROUTES: RouteInfo[] = [
@@ -9,8 +9,8 @@ const ROUTES: RouteInfo[] = [
     exact: true,
   },
   {
-    path: '/text',
-    component: lazy(() => import('../views/text/index')),
+    path: '/create',
+    component: lazy(() => import('../views/create/index')),
   },
 ];
 

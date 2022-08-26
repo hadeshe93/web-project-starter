@@ -6,4 +6,16 @@ module.exports = {
   build: {
     frameworkType: 'react',
   },
+  plugins: {
+    webpackConfigHooks: [{
+      pluginName: 'customed',
+      hooks: {
+        afterMerge(configs) {
+          configs.target = 'web';
+          console.log('configs: ', configs);
+          return configs;
+        }, 
+      },
+    }],
+  },
 };

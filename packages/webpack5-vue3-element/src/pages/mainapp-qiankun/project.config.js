@@ -7,7 +7,7 @@ module.exports = {
   page: {
     title: 'vue 标题',
     description: 'vue 描述',
-    useFlexible: false
+    useFlexible: false,
   },
   build: {
     frameworkType: 'vue-element'
@@ -17,20 +17,24 @@ module.exports = {
       {
         pluginName: 'autoImport',
         hooks: {
+          output(options) {
+            options.publicPath = '/';
+            return options;
+          },
           devServer(options) {
-            options.port = 3004;
-            options.headers = {
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-              'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
-            };
+            options.port = 3002;
+            options.allowedHosts = 'all';
             // https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback
             options.historyApiFallback = true;
             return options;
           },
+          stats(options = {}) {
+            options.children = true;
+            options.errorDetails = true;
+            return options;
+          },
           async plugins(plugins) {
-            const posToInsert =
-              plugins.findIndex((plugin) => plugin instanceof VueLoaderPlugin) + 1;
+            const posToInsert = plugins.findIndex((plugin) => plugin instanceof VueLoaderPlugin) + 1;
             plugins.splice(
               posToInsert,
               0,
@@ -44,7 +48,15 @@ module.exports = {
               })
             );
             return plugins;
-          }
+          },
+          beforeMerge(options) {
+            options.target = 'web';
+            return options;
+          },
+          afterMerge(options) {
+            console.log('options: ', JSON.stringify(options, null, 2));
+            return options;
+          },
         }
       }
     ]

@@ -1,16 +1,15 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import Router from './components/router';
-import MyHeader from './components/header/index';
 import ROUTES from './routes/index';
+import { store } from './store/index';
 
 export default function App() {
   return (
-    <div className="myapp">
-      <h1>Welcome</h1>
-      <MyHeader />
-      <Router routes={ROUTES} />
-    </div>
+    <Provider store={store}>
+      <div className="myapp">
+        <Router routes={ROUTES} />
+      </div>
+    </Provider>
   );
 }
-
-// ReactDOM.render(<App />, document.getElementById('root'));

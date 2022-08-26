@@ -1,4 +1,12 @@
+h1, h2, h3, h4, h5, h6, p, div, ul, li, dl, dt, dd, ol {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  color: #ffaaaa;
   background-color: antiquewhite;
+}
+
+body, html {
+  font-size: 28px;
 }

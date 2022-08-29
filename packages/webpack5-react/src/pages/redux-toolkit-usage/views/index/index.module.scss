@@ -1,0 +1,25 @@
+.title {
+  color: #ff0000;
+  font-size: 48px;
+}
+.title3 {
+  color: #aaffaa;
+  font-size: 48px;
+}
+
+.todo-list {
+  line-height: 36px;
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  height: 36px;
+  color: #333;
+  font-size: 14px;
+}
+
+.col {
+  flex: 0 0 33.3%;
+  text-align: left;
+}

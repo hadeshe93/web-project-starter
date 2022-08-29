@@ -19,6 +19,7 @@ importers:
       '@babel/preset-typescript': ^7.17.12
       '@babel/runtime-corejs3': ^7.17.9
       '@pmmmwh/react-refresh-webpack-plugin': ^0.5.7
+      '@reduxjs/toolkit': ^1.8.5
       '@types/lodash': ^4.14.183
       '@types/react': ~17.0.1
       '@types/react-dom': ~17.0.1
@@ -58,6 +59,7 @@ importers:
     dependencies:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.18.10
       '@babel/runtime-corejs3': 7.18.9
+      '@reduxjs/toolkit': 1.8.5_2qv3j3eld5lowsydtyly4qsrk4
       add-asset-html-webpack-plugin: 5.0.2_dseqt6curza6cwqlyc3eowsnru
       core-js: 3.24.1
       lodash: 4.17.21
@@ -1974,6 +1976,25 @@ packages:
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-dev-server: 4.10.0_5v66e2inugklgvlh4huuavolfq
     dev: true
+
+  /@reduxjs/toolkit/1.8.5_2qv3j3eld5lowsydtyly4qsrk4:
+    resolution: {integrity: sha512-f4D5EXO7A7Xq35T0zRbWq5kJQyXzzscnHKmjnu2+37B3rwHU6mX9PYlbfXdnxcY6P/7zfmjhgan0Z+yuOfeBmA==}
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18
+      react-redux: ^7.2.1 || ^8.0.2
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
+    dependencies:
+      immer: 9.0.15
+      react: 17.0.1
+      react-redux: 8.0.2_jpxozi663cd2xdhdedfq7d3ihq
+      redux: 4.2.0
+      redux-thunk: 2.4.1_redux@4.2.0
+      reselect: 4.1.6
+    dev: false
 
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -3956,6 +3977,10 @@ packages:
     hasBin: true
     requiresBuild: true
     optional: true
+
+  /immer/9.0.15:
+    resolution: {integrity: sha512-2eB/sswms9AEUSkOm4SbV5Y7Vmt/bKRwByd52jfLkW4OLYeaTP3EEiJ9agqU0O/tq6Dk62Zfj+TJSqfm1rLVGQ==}
+    dev: false
 
   /immutable/4.1.0:
     resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
@@ -6031,6 +6056,10 @@ packages:
 
   /requires-port/1.0.0:
     resolution: {integrity: sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=}
+
+  /reselect/4.1.6:
+    resolution: {integrity: sha512-ZovIuXqto7elwnxyXbBtCPo9YFEr3uJqj2rRbcOOog1bmu2Ag85M4hixSwFWyaBMKXNgvPaJ9OSu9SkBPIeJHQ==}
+    dev: false
 
   /reserved-words/0.1.2:
     resolution: {integrity: sha1-AKCUD5jNUBrqqsMWQR2a3FKzGrE=}

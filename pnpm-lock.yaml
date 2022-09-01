@@ -33,6 +33,7 @@ importers:
       file-loader: ^6.2.0
       html-webpack-plugin: ^5.5.0
       http-proxy: ^1.18.1
+      immer: ^9.0.15
       lodash: ^4.17.21
       mini-css-extract-plugin: ^2.6.0
       postcss: ^8.4.16
@@ -62,6 +63,7 @@ importers:
       '@reduxjs/toolkit': 1.8.5_2qv3j3eld5lowsydtyly4qsrk4
       add-asset-html-webpack-plugin: 5.0.2_dseqt6curza6cwqlyc3eowsnru
       core-js: 3.24.1
+      immer: 9.0.15
       lodash: 4.17.21
       react: 17.0.1
       react-dom: 17.0.1_react@17.0.1

@@ -11,6 +11,7 @@ export default class Header extends React.Component<Props> {
   };
 
   shouldComponentUpdate(nextProps, nextState) {
+    // 所以这里就算改了 props 也是不会生效的
     return this.state.color !== nextState.color;
   }
 
@@ -23,6 +24,10 @@ export default class Header extends React.Component<Props> {
   };
 
   render() {
-    return <h4 onClick={this.onEmphasize} style={{color: this.state.color}}>{this.props.title || '默认标题'}</h4>
+    return <h4 onClick={this.onEmphasize} style={{color: this.state.color}}>{this.props.title}</h4>
   }
+
+  static defaultProps: Props = {
+    title: '内置默认标题'
+  };
 }

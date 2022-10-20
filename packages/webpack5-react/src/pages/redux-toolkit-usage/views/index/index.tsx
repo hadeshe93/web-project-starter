@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import WithProfiler from '../../components/with-profiler';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Condition from '../../components/base/condition';
 import Modal from '../../components/modal';
+import Counter from '../../components/counter';
 import { asyncFetchTodos, selectStateTodos, selectStateIsFetchingTodos } from '../../store/todos';
 import { useAppDispatch, useAppSelector } from '../../store/index';
 
@@ -33,12 +34,12 @@ export default function ViewIndex(props: Props) {
   const onRefresh = () => {
     dispatch(asyncFetchTodos({}) as any);
   };
-  const onShowModal = () => {
+  const onShowModal = useCallback(() => {
     setShowMoal(true);
-  };
-  const onCloseModal = () => {
+  }, []);
+  const onCloseModal = useCallback(() => {
     setShowMoal(false);
-  };
+  }, []);
   const todos = useAppSelector(selectStateTodos);
   const isFetching = useAppSelector(selectStateIsFetchingTodos);
 
@@ -47,7 +48,9 @@ export default function ViewIndex(props: Props) {
       <WithProfiler id="header">
         <Header title="列表页"></Header>
       </WithProfiler>
-      {showModal ? <Modal close={onCloseModal}>Modal</Modal> : null}
+      <Condition if={showModal}>
+        <Modal close={onCloseModal}>Modal</Modal>
+      </Condition>
       <div>
         <button onClick={onRefresh}>刷新</button>
         <button onClick={onCreate}>创建</button>
@@ -57,9 +60,10 @@ export default function ViewIndex(props: Props) {
         <span style={{ color: 'blue' }}>条件显示或隐藏</span>
         <span style={{ color: 'blue' }}>条件显示或隐藏</span>
       </Condition>
-      {isFetching ? (
+      <Condition if={isFetching}>
         <div>正在请求数据...</div>
-      ) : (
+      </Condition>
+      <Condition if={!isFetching}>
         <ul className={style['todo-list']}>
           {todos.map((todo, index) => (
             <li key={index} className={style['todo-item']}>
@@ -68,7 +72,8 @@ export default function ViewIndex(props: Props) {
             </li>
           ))}
         </ul>
-      )}
+      </Condition>
+      <Counter></Counter>
       <Footer text="脚注"></Footer>
     </div>
   );

@@ -30,10 +30,9 @@
       // "@vue/*": ["packages/*/src"],
       // "vue": ["packages/vue/src"]
     }
-  }
-  // "include": [
-  //   // "packages/global.d.ts",
-  //   // "packages/*/src",
-  //   // "packages/*/__tests__"
-  // ]
+  },
+  "include": [
+    "src/**/*",
+    "_tests__/**/*"
+  ]
 }

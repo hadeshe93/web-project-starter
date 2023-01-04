@@ -2,16 +2,13 @@
   "name": "@hadeshe93/webpack5-vue3",
   "version": "0.1.0",
   "scripts": {
-    "start": "cross-env DEBUG=@hadeshe93/* node build/index.js demo1",
-    "debug": "node --inspect-brk ./node_modules/.bin/webpack-cli -- --config=./configs/webpack.config.js",
+    "start": "hh dev",
     "preview": "npx http-server ./dist/demo1"
   },
   "main": "index.js",
   "author": "hadeshe",
   "license": "MIT",
   "devDependencies": {
-    "@hadeshe93/builder-core": "^0.1.3",
-    "@hadeshe93/builder-webpack": "^0.1.9",
     "@hadeshe93/wpconfig-mw-vue3": "^0.1.9",
     "cross-env": "^7.0.3",
     "http-proxy": "^1.18.1",

@@ -3,7 +3,7 @@
     count 值: {{ cnt }} 
     <button @click="addCnt">Click</button>
     <Log />
-    <Pannel title="大漠孤烟直" content="君不见黄河之水天上来君不见黄河之水天上来君不见黄河之水天上来君不见黄河之水天上来" />
+    <Pannel title="大漠孤烟直" content="长河落日圆" />
     <hr />
 
     <router-view></router-view>

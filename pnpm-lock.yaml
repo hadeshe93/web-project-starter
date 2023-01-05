@@ -266,7 +266,7 @@ importers:
   packages/webpack5-vue3:
     specifiers:
       '@babel/runtime-corejs3': ^7.17.9
-      '@hadeshe93/wpconfig-mw-vue3': ^0.1.9
+      '@hadeshe93/wpconfig-mw-vue3': ^0.1.10
       core-js: ^3.22.0
       cross-env: ^7.0.3
       http-proxy: ^1.18.1
@@ -282,7 +282,7 @@ importers:
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
     devDependencies:
-      '@hadeshe93/wpconfig-mw-vue3': 0.1.9_vue@3.2.45
+      '@hadeshe93/wpconfig-mw-vue3': 0.1.10_vue@3.2.45
       cross-env: 7.0.3
       http-proxy: 1.18.1
       minimist: 1.2.7
@@ -1864,8 +1864,8 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@hadeshe93/wpconfig-core/0.1.13:
-    resolution: {integrity: sha512-dVIeZvtxCxdWrCD4/vgM960o7vWUAy+NHi8XyO46+MI0sWou3NhaQVeUyRQZVZsNuWbaMEW5WmWewoSiaD1EgA==}
+  /@hadeshe93/wpconfig-core/0.1.14:
+    resolution: {integrity: sha512-Ct91dzXlhdTAtx717fWVxhdMaNZeOa2dH9XhpfXGjo8pPYvXrLEu4pVi3BnhDF/ERRh6O81WMhQApUIRoKDKHA==}
     dependencies:
       '@babel/core': 7.20.5
       '@babel/plugin-transform-runtime': 7.19.6_@babel+core@7.20.5
@@ -1908,28 +1908,12 @@ packages:
       - webpack-cli
     dev: true
 
-  /@hadeshe93/wpconfig-mw-vue3/0.1.3:
-    resolution: {integrity: sha512-rMflZ6T7M+qhtyiWinKFlGV03GF3fd1MUWUCVoXdp4iNb9oGRwcpU9RqlqY+LQLP6e2L5eZ6HreJMT1nLXrDOQ==}
+  /@hadeshe93/wpconfig-mw-vue3/0.1.10_vue@3.2.45:
+    resolution: {integrity: sha512-gMvTcI+CX5MOR2b+Gk+BkE+D7PjAtxe7G8tW/e16YGxvp3pNlT9HDBVjSZBIFtLgzZMcExIk/EncNdx2QcskAQ==}
     peerDependencies:
       vue: ^3.2.39
     dependencies:
-      vue-loader: 16.8.3_webpack@5.74.0
-      webpack: 5.74.0
-      webpack-chain: 6.5.1
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@vue/compiler-sfc'
-      - esbuild
-      - uglify-js
-      - webpack-cli
-    dev: false
-
-  /@hadeshe93/wpconfig-mw-vue3/0.1.9_vue@3.2.45:
-    resolution: {integrity: sha512-11PNCGV5vhqd43M5NXz0j2bDK0BWKfUFnGKO8gLh8W7WAMloVtGmtrlle9tcsUEybed8RHkxn6ub15j/6bGkDQ==}
-    peerDependencies:
-      vue: ^3.2.39
-    dependencies:
-      '@hadeshe93/wpconfig-core': 0.1.13
+      '@hadeshe93/wpconfig-core': 0.1.14
       vue: 3.2.45
       vue-loader: 16.8.3_vue@3.2.45+webpack@5.74.0
       webpack: 5.74.0
@@ -1946,6 +1930,22 @@ packages:
       - uglify-js
       - webpack-cli
     dev: true
+
+  /@hadeshe93/wpconfig-mw-vue3/0.1.3:
+    resolution: {integrity: sha512-rMflZ6T7M+qhtyiWinKFlGV03GF3fd1MUWUCVoXdp4iNb9oGRwcpU9RqlqY+LQLP6e2L5eZ6HreJMT1nLXrDOQ==}
+    peerDependencies:
+      vue: ^3.2.39
+    dependencies:
+      vue-loader: 16.8.3_webpack@5.74.0
+      webpack: 5.74.0
+      webpack-chain: 6.5.1
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@vue/compiler-sfc'
+      - esbuild
+      - uglify-js
+      - webpack-cli
+    dev: false
 
   /@jest/types/26.6.2:
     resolution: {integrity: sha512-fC6QCp7Sc5sX6g8Tvbmj4XUTbyrik0akgRy03yjXbQaBWWNWGE7SGtJk98m0N8nzegD/7SggrUlivxo5ax4KWQ==}
@@ -2177,12 +2177,12 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.5
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint/8.4.5:
     resolution: {integrity: sha512-dhsC09y1gpJWnK+Ff4SGvCuSnk9DaU0BJZSzOwa6GVSg65XtTugLBITDAAzRU5duGBoXBHpdR/9jHGxJjNflJQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
 
   /@types/estree/0.0.51:
@@ -2190,7 +2190,6 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
-    dev: true
 
   /@types/express-serve-static-core/4.17.31:
     resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
@@ -2627,17 +2626,25 @@ packages:
       acorn: ^8
     dependencies:
       acorn: 8.8.0
+    dev: true
+
+  /acorn-import-assertions/1.8.0_acorn@8.8.1:
+    resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
+    peerDependencies:
+      acorn: ^8
+    dependencies:
+      acorn: 8.8.1
 
   /acorn/8.8.0:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
 
   /acorn/8.8.1:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
 
   /add-asset-html-webpack-plugin/5.0.2_dseqt6curza6cwqlyc3eowsnru:
     resolution: {integrity: sha512-tvizXk9TU8+0BMpygyLl3/ELnCkMfEFxBvrU1bbtgJMs+ZOZdXpAgM6zRljxtV6UsPIOVhcIUmZG9GYeaGiEJQ==}
@@ -3059,6 +3066,7 @@ packages:
       electron-to-chromium: 1.4.215
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
+    dev: true
 
   /browserslist/4.21.4:
     resolution: {integrity: sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw==}
@@ -3143,6 +3151,7 @@ packages:
 
   /caniuse-lite/1.0.30001375:
     resolution: {integrity: sha512-kWIMkNzLYxSvnjy0hL8w1NOaWNr2rn39RTAVyIwcw8juu60bZDWiF1/loOYANzjtJmy6qPgNmn38ro5Pygagdw==}
+    dev: true
 
   /caniuse-lite/1.0.30001434:
     resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==}
@@ -3730,6 +3739,7 @@ packages:
 
   /electron-to-chromium/1.4.215:
     resolution: {integrity: sha512-vqZxT8C5mlDZ//hQFhneHmOLnj1LhbzxV0+I1yqHV8SB1Oo4Y5Ne9+qQhwHl7O1s9s9cRuo2l5CoLEHdhMTwZg==}
+    dev: true
 
   /electron-to-chromium/1.4.284:
     resolution: {integrity: sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==}
@@ -7844,7 +7854,7 @@ packages:
     hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.2
-      acorn: 8.8.0
+      acorn: 8.8.1
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -8120,6 +8130,7 @@ packages:
       browserslist: 4.21.3
       escalade: 3.1.1
       picocolors: 1.0.0
+    dev: true
 
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -8491,9 +8502,9 @@ packages:
       '@webassemblyjs/ast': 1.11.1
       '@webassemblyjs/wasm-edit': 1.11.1
       '@webassemblyjs/wasm-parser': 1.11.1
-      acorn: 8.8.0
-      acorn-import-assertions: 1.8.0_acorn@8.8.0
-      browserslist: 4.21.3
+      acorn: 8.8.1
+      acorn-import-assertions: 1.8.0_acorn@8.8.1
+      browserslist: 4.21.4
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.10.0
       es-module-lexer: 0.9.3

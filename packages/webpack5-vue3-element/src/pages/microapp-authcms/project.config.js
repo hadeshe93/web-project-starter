@@ -1,75 +1,54 @@
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
+const { defineProjectConfig } = require('@hadeshe93/builder-core');
 
-let pageName = '';
-
-module.exports = {
+module.exports = defineProjectConfig({
   page: {
-    title: 'vue 标题',
-    description: 'vue 描述',
-    useFlexible: false
+    title: 'AUTHCMS',
+    description: 'AUTHCMS Description',
   },
   build: {
-    frameworkType: 'vue-element'
   },
-  plugins: {
-    webpackConfigHooks: [
-      {
-        pluginName: 'autoImport',
-        hooks: {
-          beforeMerge(options) {
-            options.target = 'web';
-            const { app } = options.entry;
-            pageName = app.split(path.sep).slice(-2)[0];
-            console.log('app: ', app);
-            console.log('app segs: ', app.split(path.sep));
-            return options;
+  middlewares: [
+    ['@hadeshe93/wpconfig-mw-vue3'],
+    [
+      () => (chainConfig) => {
+        const PAGE_NAME = 'microapp-authcms';
+        chainConfig.output
+          .library(`${PAGE_NAME}-[name]`)
+          .libraryTarget('umd');
+        chainConfig.merge({
+          // 这些属性没有 api，只能用 merge
+          output: {
+              chunkLoadingGlobal: `webpackJsonp_${PAGE_NAME}`,
+              globalObject: 'window',
           },
-          afterMerge(options) {
-            console.log(JSON.stringify(options, null, 2));
-            return options;
-          },
-          output(options) {
-            options.publicPath = '/';
-            options.library = `${pageName}-[name]`;
-            options.libraryTarget = 'umd';
-            options.chunkLoadingGlobal = `webpackJsonp_${pageName}`;
-            options.globalObject = 'window';
-            return options;
-          },
-          devServer(options) {
-            options.port = 3004;
-            options.headers = {
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-              'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
-            };
-            // https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback
-            options.historyApiFallback = true;
-            return options;
-          },
-          async plugins(plugins) {
-            const posToInsert =
-              plugins.findIndex((plugin) => plugin instanceof VueLoaderPlugin) + 1;
-            plugins.splice(
-              posToInsert,
-              0,
-              // @ts-ignore
-              AutoImport({
-                resolvers: [ElementPlusResolver()]
-              }),
-              // @ts-ignore
-              Components({
-                resolvers: [ElementPlusResolver()]
-              })
-            );
-            return plugins;
-          }
-        }
-      }
+        });
+
+        const VUE_LOADER_PLUGIN_NAME = 'VueLoaderPlugin';
+        const UNPLUGIN_AUTO_IMPORT_NAME = 'unplugin-auto-import';
+        // 该插件不能用 new 实例化，所有要定制初始化方法
+        chainConfig.plugin(UNPLUGIN_AUTO_IMPORT_NAME)
+          .before(VUE_LOADER_PLUGIN_NAME)
+          .use(AutoImport, [{
+            resolvers: [ElementPlusResolver()]
+          }]);
+        chainConfig.plugin(UNPLUGIN_AUTO_IMPORT_NAME)
+          .init((Plugin, args) => Plugin(...args));
+
+        const UNPLUGIN_VUE_COMPONENTS_NAME = 'unplugin-vue-components';
+        // 该插件不能用 new 实例化，所有要定制初始化方法
+        chainConfig.plugin(UNPLUGIN_VUE_COMPONENTS_NAME)
+          .before(VUE_LOADER_PLUGIN_NAME)
+          .use(Components, [{
+            resolvers: [ElementPlusResolver()]
+          }]);
+        chainConfig.plugin(UNPLUGIN_VUE_COMPONENTS_NAME)
+          .init((Plugin, args) => Plugin(...args));
+
+        return chainConfig;
+      },
     ]
-  }
-};
+  ],
+});

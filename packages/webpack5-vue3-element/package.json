@@ -18,6 +18,7 @@
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
+    "@hadeshe93/wpconfig-mw-vue3": "^0.1.11",
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
@@ -45,6 +46,7 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime-corejs3": "^7.17.9",
+    "@hadeshe93/builder-core": "^0.1.5",
     "@types/lodash": "^4.14.183",
     "add-asset-html-webpack-plugin": "^5.0.2",
     "core-js": "^3.22.0",

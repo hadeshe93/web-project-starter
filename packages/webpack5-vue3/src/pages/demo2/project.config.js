@@ -1,4 +1,6 @@
-module.exports = {
+const { defineProjectConfig } = require('@hadeshe93/builder-webpack');
+
+module.exports = defineProjectConfig({
   page: {
     title: 'demo2',
     description: 'demo2 的描述',
@@ -8,4 +10,4 @@ module.exports = {
   middlewares: [
     ['@hadeshe93/wpconfig-mw-vue3']
   ],
-};
+});

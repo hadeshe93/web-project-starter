@@ -1,4 +1,4 @@
-const { defineProjectConfig } = require('@hadeshe93/builder-core');
+const { defineProjectConfig } = require('@hadeshe93/builder-webpack');
 
 module.exports = defineProjectConfig({
   page: {
@@ -8,6 +8,6 @@ module.exports = defineProjectConfig({
   build: {
   },
   middlewares: [
-    ['@hadeshe93/wpconfig-mw-vue3']
+    ['@hadeshe93/wpconfig-mw-vue3'],
   ],
 });

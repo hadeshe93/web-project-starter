@@ -1,7 +1,7 @@
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
-const { defineProjectConfig } = require('@hadeshe93/builder-core');
+const { defineProjectConfig } = require('@hadeshe93/builder-webpack');
 
 module.exports = defineProjectConfig({
   page: {

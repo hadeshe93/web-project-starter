@@ -55,6 +55,8 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime-corejs3": "^7.17.9",
+    "@hadeshe93/builder-webpack": "^0.1.12",
+    "@hadeshe93/wpconfig-mw-react17": "^0.1.5",
     "@reduxjs/toolkit": "^1.8.5",
     "add-asset-html-webpack-plugin": "^5.0.2",
     "core-js": "^3.22.0",

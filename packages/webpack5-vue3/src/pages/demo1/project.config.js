@@ -1,11 +1,13 @@
-module.exports = {
+const { defineProjectConfig } = require('@hadeshe93/builder-core');
+
+module.exports = defineProjectConfig({
   page: {
-    title: 'vue 标题',
-    description: 'vue 描述',
+    title: 'demo1',
+    description: 'demo1 的描述',
   },
   build: {
   },
   middlewares: [
     ['@hadeshe93/wpconfig-mw-vue3']
   ],
-};
+});

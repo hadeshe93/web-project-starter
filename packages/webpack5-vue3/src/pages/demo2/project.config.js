@@ -1,9 +1,11 @@
 module.exports = {
   page: {
-    title: 'vue 标题',
-    description: 'vue 描述',
+    title: 'demo2',
+    description: 'demo2 的描述',
   },
   build: {
-    frameworkType: 'vue',
   },
+  middlewares: [
+    ['@hadeshe93/wpconfig-mw-vue3']
+  ],
 };

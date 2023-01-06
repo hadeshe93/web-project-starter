@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.17.9",
+    "@hadeshe93/builder-core": "^0.1.5",
     "core-js": "^3.22.0",
     "pinia": "^2.0.16",
     "vue": "^3.2.39",

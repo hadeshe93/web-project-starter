@@ -1,10 +1,14 @@
-module.exports = {
+const { defineProjectConfig } = require('@hadeshe93/builder-webpack');
+
+module.exports = defineProjectConfig({
   page: {
-    title: 'react 标题',
-    description: 'react 描述',
+    title: 'Demo1 | webpack5-react-antd',
+    description: 'demo1 的描述',
     useFlexible: false,
   },
   build: {
-    frameworkType: 'react-cms',
   },
-};
+  middlewares: [
+    ['@hadeshe93/wpconfig-mw-react17'],
+  ],
+});

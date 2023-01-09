@@ -2,21 +2,16 @@
   "name": "@hadeshe93/webpack5-vue3-element",
   "version": "0.1.0",
   "scripts": {
-    "start": "vice dev",
-    "build": "vice build",
-    "debug": "node --inspect-brk ./node_modules/.bin/webpack-cli -- --config=./configs/webpack.config.js",
-    "dev": "cross-env MODE=development TARGET_PAGE=demo1 webpack serve --config=./configs/webpack.config.js",
-    "buildbackup": "rimraf dist/ && npm run build:dll && npm run build:page",
-    "build:page": "cross-env MODE=production TARGET_PAGE=demo1 webpack --config=./configs/webpack.config.js",
-    "build:dll": "cross-env MODE=production webpack --config=./configs/webpack.dll.config.js",
-    "preview": "npx http-server ./dist"
+    "start": "hh dev",
+    "build": "hh build",
+    "preview": "npx http-server ./dist/mainapp-wujie"
   },
   "main": "index.js",
   "author": "hadeshe",
   "license": "MIT",
   "devDependencies": {
     "@hadeshe93/builder-webpack": "^0.1.12",
-    "@hadeshe93/wpconfig-mw-vue3": "^0.1.11",
+    "@hadeshe93/wpconfig-mw-vue3": "^0.1.12",
     "cross-env": "^7.0.3",
     "http-proxy": "^1.18.1",
     "unplugin-auto-import": "^0.11.1",

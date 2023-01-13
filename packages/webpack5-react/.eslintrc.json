@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {},
+  "ignorePatterns": [
+    "dist/"
+  ],
+  "plugins": [],
+  "extends": [
+    "@hadeshe93/eslint-config-hh"
+  ]
+}

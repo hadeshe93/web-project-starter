@@ -4,23 +4,34 @@
   "scripts": {
     "start": "hh dev",
     "build": "hh build",
+    "lint": "eslint ./",
     "preview": "npx http-server ./dist/redux-toolkit-usage"
   },
   "main": "index.js",
   "author": "hadeshe",
   "license": "MIT",
+  "lint-staged": {
+    "*.(ts|js)": [
+      "eslint ./ --fix"
+    ]
+  },
   "resolutions": {
     "@types/react": "~17.0.1",
     "@types/react-dom": "~17.0.1",
     "@types/react-router-dom": "~5.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@hadeshe93/eslint-config-hh": "^0.1.3",
     "@types/lodash": "^4.14.183",
     "@types/react": "~17.0.1",
     "@types/react-dom": "~17.0.1",
     "@types/react-router-dom": "~5.3.0",
     "cross-env": "^7.0.3",
+    "eslint": "^8.31.0",
     "http-proxy": "^1.18.1",
+    "prettier": "^2.8.2",
     "typescript": "^4.7.4",
     "typescript-plugin-css-modules": "^3.4.0"
   },

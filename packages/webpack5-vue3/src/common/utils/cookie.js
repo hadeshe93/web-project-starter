@@ -1,6 +1,6 @@
 /*
- * @Description   : 
- * @usage         : 
+ * @Description   :
+ * @usage         :
  * @Date          : 2022-04-24 10:14:11
  * @Author        : hadeshe93<hadeshe93@gmail.com>
  * @LastEditors   : hadeshe93<hadeshe93@gmail.com>
@@ -17,4 +17,4 @@ export function get(key, oriCookie) {
   const r = new RegExp(`(?:^|;\\s*)${key}=([^;]*)`);
   const m = cookie.match(r);
   return m?.[1] || '';
-};
+}

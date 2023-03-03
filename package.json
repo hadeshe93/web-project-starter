@@ -1,7 +1,7 @@
 {
-  "name": "@hadeshe93/webpack5-starter",
+  "name": "@hadeshe93/web-project-starter",
   "version": "0.1.0",
-  "description": "webpack5 starter for projects",
+  "description": "A starter for web projects",
   "main": "index.js",
   "author": "hadeshe",
   "workspaces": [

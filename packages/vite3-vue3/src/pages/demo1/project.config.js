@@ -4,7 +4,10 @@ module.exports = defineProjectConfig({
   page: {
     title: 'demo1',
     description: 'demo1 的描述',
-    useFlexible: true,
+    useInjection: {
+      flexible: true,
+      debugger: true,
+    },
   },
   build: {},
   middlewares: [

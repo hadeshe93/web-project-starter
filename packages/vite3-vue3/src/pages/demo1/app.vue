@@ -5,6 +5,7 @@ import HelloWorld from '~/common/components/HelloWorld.vue'
 </script>
 
 <template>
+  <!-- logo 区域 -->
   <div class="logo-wrapper">
     <a href="https://vitejs.dev" target="_blank">
       <img :src="viteSvgSrc" class="logo" alt="Vite logo" />
@@ -13,7 +14,12 @@ import HelloWorld from '~/common/components/HelloWorld.vue'
       <img :src="vueSvgSrc" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+
+  <!-- 欢迎区域 -->
   <HelloWorld msg="Vite + Vue" />
+
+  <!-- 路由界面区域 -->
+  <router-view></router-view>
 </template>
 
 <style lang="scss" scoped>

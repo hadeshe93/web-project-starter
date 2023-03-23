@@ -1,3 +1,4 @@
+import path from 'path';
 import { defineProjectConfig } from '@hadeshe93/builder-vite';
 
 export default defineProjectConfig(({ mode }) => ({
@@ -12,6 +13,18 @@ export default defineProjectConfig(({ mode }) => ({
   },
   build: {},
   middlewares: [
-    ['@hadeshe93/vtconfig-mw-vue3']
+    ['@hadeshe93/vtconfig-mw-vue3'],
+    [
+      (options: any) => (chainConfig) => {
+        chainConfig.resolve.alias.merge(options.alias);
+        return chainConfig;
+      },
+      {
+        alias: {
+          '@': path.resolve(__dirname, './'),
+          '~': path.resolve(__dirname, '../../'),
+        }
+      }
+    ]
   ],
 }));

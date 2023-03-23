@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import vueSvgSrc from '../../assets/vue.svg';
-import viteSvgSrc from '../../assets/vite.svg';
-import HelloWorld from '../../components/HelloWorld.vue'
+import vueSvgSrc from '~/common/assets/vue.svg';
+import viteSvgSrc from '~/common/assets/vite.svg';
+import HelloWorld from '~/common/components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
+  <div class="logo-wrapper">
     <a href="https://vitejs.dev" target="_blank">
       <img :src="viteSvgSrc" class="logo" alt="Vite logo" />
     </a>
@@ -16,9 +16,12 @@ import HelloWorld from '../../components/HelloWorld.vue'
   <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.logo-wrapper {
+  margin-top: 100px;
+}
 .logo {
-  height: 100px;
+  height: 150px;
   padding: 20px;
   will-change: filter;
   transition: filter 300ms;

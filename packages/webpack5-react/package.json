@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.17.9",
-    "@hadeshe93/builder-webpack": "^0.2.12",
+    "@hadeshe93/builder-webpack": "^0.2.13",
     "@hadeshe93/wpconfig-mw-react17": "^0.1.6",
     "@reduxjs/toolkit": "^1.8.5",
     "core-js": "^3.22.0",

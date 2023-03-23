@@ -8,7 +8,7 @@ import '~/common/styles/base.scss'
 createApp(App)
   .use(
     createRouter({
-      history: createWebHashHistory(process.env.NODE_ENV === 'production' ? '/path/to/demo1/' : '/'),
+      history: createWebHashHistory(),
       routes: ROUTES,
     }),
   )

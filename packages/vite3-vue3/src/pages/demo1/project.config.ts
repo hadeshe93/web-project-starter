@@ -23,7 +23,6 @@ export default defineProjectConfig(({ mode }) => ({
         alias: {
           '@': path.resolve(__dirname, './'),
           '~': path.resolve(__dirname, '../../'),
-          'process.env.NODE': JSON.stringify(mode),
         }
       }
     ]

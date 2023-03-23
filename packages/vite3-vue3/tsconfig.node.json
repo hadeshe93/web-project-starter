@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "composite": true,
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/vite.config.ts", "src/pages/demo1/project.config.ts"]
+  "include": ["src/**/vite.config.ts", "src/**/project.config.ts"]
 }

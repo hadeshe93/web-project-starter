@@ -13,20 +13,20 @@ import HelloWorld from '../../components/HelloWorld.vue'
       <img :src="vueSvgSrc" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue + 2" />
+  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 100px;
+  padding: 20px;
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 30px #646cffaa);
 }
 .logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+  filter: drop-shadow(0 0 30px #42b883aa);
 }
 </style>

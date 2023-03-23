@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "ts-node scripts/dev.ts",
-    "help": "vite serve --help",
+    "start": "cross-env NODE_ENV=development DEBUG=* hh dev",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
@@ -12,12 +11,13 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@hadeshe93/builder-vite": "^0.1.2",
+    "@hadeshe93/builder-vite": "^0.2.10",
     "@hadeshe93/vite-chain": "^0.1.3",
     "@hadeshe93/vtconfig-mw-vue3": "^0.1.2",
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.7.1",
     "@vitejs/plugin-vue": "^4.0.0",
+    "cross-env": "^7.0.3",
     "minimist": "^1.2.7",
     "postcss": "^8.4.21",
     "postcss-pxtorem": "^6.0.0",

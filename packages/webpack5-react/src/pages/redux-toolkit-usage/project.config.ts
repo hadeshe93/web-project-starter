@@ -1,9 +1,12 @@
-const { defineProjectConfig } = require('@hadeshe93/builder-webpack');
+import { defineProjectConfig } from '@hadeshe93/builder-webpack';
 
-module.exports = defineProjectConfig({
+export default defineProjectConfig({
   page: {
     title: 'redux-toolkit-usage',
     description: 'redux-toolkit-usage 的描述',
+    useInjection: {
+      flexible: true,
+    },
   },
   build: {
   },

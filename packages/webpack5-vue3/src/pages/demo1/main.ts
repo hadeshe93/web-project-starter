@@ -12,7 +12,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './app.vue';
 import { ROUTES } from './routes/index';
 import { get as getCookie } from '@/common/utils/cookie';
-import './styles/style.scss';
+import '../../common/styles/base.scss';
 
 createApp(App)
   .use(

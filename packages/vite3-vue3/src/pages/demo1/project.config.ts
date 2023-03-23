@@ -1,16 +1,17 @@
-const { defineProjectConfig } = require('@hadeshe93/builder-vite');
+import { defineProjectConfig } from '@hadeshe93/builder-vite';
 
-module.exports = defineProjectConfig({
+export default defineProjectConfig(({ mode }) => ({
   page: {
     title: 'demo1',
     description: 'demo1 的描述',
     useInjection: {
       flexible: true,
-      debugger: true,
+      debugger: mode === 'development',
+      pageSpeedTester: true,
     },
   },
   build: {},
   middlewares: [
     ['@hadeshe93/vtconfig-mw-vue3']
   ],
-});
+}));

@@ -1,4 +1,4 @@
-import { defineProjectConfig } from '@hadeshe93/builder-vite';
+import { defineProjectConfig } from '@hadeshe93/builder-webpack';
 
 export default defineProjectConfig(({ mode }) => ({
   page: {
@@ -6,12 +6,10 @@ export default defineProjectConfig(({ mode }) => ({
     description: 'demo2 的描述',
     useInjection: {
       flexible: true,
-      debugger: mode === 'development',
+      debugger: mode !== 'production',
       pageSpeedTester: true,
     },
   },
   build: {},
-  middlewares: [
-    ['@hadeshe93/vtconfig-mw-vue3']
-  ],
+  middlewares: [['@hadeshe93/wpconfig-mw-vue3']],
 }));

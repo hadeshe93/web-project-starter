@@ -16,7 +16,7 @@ import HelloWorld from '~/common/components/HelloWorld.vue';
   </div>
 
   <!-- 欢迎区域 -->
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Webpack + Vue" />
 
   <!-- 路由界面区域 -->
   <router-view></router-view>

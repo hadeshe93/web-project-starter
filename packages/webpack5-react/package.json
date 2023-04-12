@@ -23,7 +23,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
-    "@hadeshe93/eslint-config-hh": "^0.1.3",
+    "@hadeshe93/eslint-config-hh": "^1.0.0",
     "@types/lodash": "^4.14.183",
     "@types/react": "~17.0.1",
     "@types/react-dom": "~17.0.1",
@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.17.9",
-    "@hadeshe93/builder-webpack": "^0.2.13",
-    "@hadeshe93/wpconfig-mw-react17": "^0.1.6",
+    "@hadeshe93/builder-webpack": "^1.0.0",
+    "@hadeshe93/wpconfig-mw-react17": "^1.0.0",
     "@reduxjs/toolkit": "^1.8.5",
     "core-js": "^3.22.0",
     "immer": "^9.0.15",

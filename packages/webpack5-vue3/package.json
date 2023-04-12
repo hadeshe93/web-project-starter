@@ -16,9 +16,9 @@
     ]
   },
   "devDependencies": {
-    "@hadeshe93/builder-webpack": "^0.2.13",
-    "@hadeshe93/eslint-config-hh": "^0.1.3",
-    "@hadeshe93/wpconfig-mw-vue3": "^0.1.12",
+    "@hadeshe93/builder-webpack": "^1.0.0",
+    "@hadeshe93/eslint-config-hh": "^1.0.0",
+    "@hadeshe93/wpconfig-mw-vue3": "^1.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.31.0",
     "http-proxy": "^1.18.1",
